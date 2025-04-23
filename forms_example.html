@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Форми та JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    form {
+      margin-bottom: 30px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      max-width: 400px;
+    }
+    label, p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Приклади різних форм</h1>
+
+  <form>
+    <h2>Форма реєстрації</h2>
+    <label>Ім’я:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Пароль:</label><br>
+    <input type="password" name="password" required><br><br>
+
+    <button type="submit">Зареєструватись</button>
+  </form>
+
+  <form>
+    <h2>Опитування</h2>
+    <p>Який ваш улюблений колір?</p>
+    <input type="radio" name="color" value="Синій"> Синій<br>
+    <input type="radio" name="color" value="Зелений"> Зелений<br>
+    <input type="radio" name="color" value="Червоний"> Червоний<br>
+  </form>
+
+  <form>
+    <h2>Вибір міста</h2>
+    <label>Оберіть місто:</label><br>
+    <select name="city">
+      <option value="kyiv">Київ</option>
+      <option value="lviv">Львів</option>
+      <option value="kharkiv">Харків</option>
+    </select>
+  </form>
+
+  <form id="calcForm">
+    <h2>Калькулятор (JS)</h2>
+    <label>Число 1:</label><br>
+    <input type="number" id="num1" required><br><br>
+
+    <label>Число 2:</label><br>
+    <input type="number" id="num2" required><br><br>
+
+    <button type="button" onclick="calculate()">Порахувати суму</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function calculate() {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const sum = num1 + num2;
+
+      document.getElementById("result").textContent = "Сума: " + sum;
+    }
+  </script>
+
+</body>
+</html>
